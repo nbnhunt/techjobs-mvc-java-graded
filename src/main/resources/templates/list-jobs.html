@@ -10,8 +10,8 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <!-- TODO #1 - Use a loop to display job results in a table. -->
-    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+ <!--   &lt;!&ndash; TODO #1 - Use a loop to display job results in a table. &ndash;&gt;
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>-->
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
     <!--loop displaying each job passed by controller-->
@@ -20,22 +20,37 @@
     <!--Add CSS class "job-listing"-->
     <!--A table for each job, one job field per row-->
 
-    <th:block th:each="job : ${jobs}" >
+    <th:block th:each="job : ${jobs}">
         <table class="job-listing">
-            <td>
-                <tr>Job ID</tr>
-                <tr th:text = "${job.id}"></tr>
-            </td>
-            <td>
-                <tr>Name</tr>
-                <tr th:text = "${job.name}"></tr>
-            </td>
+            <tr>
+                <td>Job ID</td>
+                <td th:text = "${job.id}"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td th:text = "${job.name}"></td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td th:text = "${job.location}"></td>
+            </tr>
+            <tr>
+                <td>Employer</td>
+                <td th:text = "${job.employer}"></td>
+            </tr>
+            <tr>
+                <td>Position Type</td>
+                <td th:text = "${job.positionType}"></td>
+            </tr>
+            <tr>
+                <td>Skills</td>
+                <td th:text = "${job.coreCompetency}"></td>
+            </tr>
         </table>
     </th:block>
 
 
-<!--
-    <th:block th:each="job : ${jobs}">
+<!--    <th:block th:each="job : ${jobs}">
         <table class="job-listing">
             <td>
                 <tr>Job ID</tr>
@@ -49,11 +64,10 @@
                 <tr>Position Type</tr>
                 <tr th:text = "${job.positionType}"></tr>
                 <tr>Skill</tr>
-                <tr th:text = "${job.skill}"></tr>
+                <tr th:text = "${job.coreCompetency}"></tr>
             </td>
         </table>
-    </th:block>
--->
+    </th:block>-->
 
 </div>
 
