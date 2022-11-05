@@ -46,6 +46,9 @@ public class SearchController {
 
     // Pass ListController.columnChoices into the view, as the existing search handler does.
 
+    // This started as creating "results" and an associated arrayList, but worked only with the pre-constructed list-jobs
+    // This worked after "Passing Data to a Template" in book: 13.3.1
+
     @PostMapping(value = "results")
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam(required = false) String searchTerm) {
         ArrayList<Job> jobs;
